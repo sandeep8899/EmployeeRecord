@@ -7,7 +7,7 @@ class UserDetailsController < ApplicationController
 		@user_details=UserDetail.new(user_detail_params)
 		@user_details.user=current_user
 		if @user_details.save
-			redirect_to users_path
+			redirect_to members_home_path
 		else
 			render 'new'
 		end

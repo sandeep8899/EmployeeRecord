@@ -1,0 +1,24 @@
+<table border="1">
+	<tr>
+		<td colspan="2"> 
+			<h3> Your all History </h3>
+		</td>
+	</tr>
+	<tr>
+		<th> Date </th><th> Time </th>
+	</tr>
+	<% @histories.each do |history| %>
+		<tr>
+			<td>
+				<%= history.date %>
+			</td>
+			<td>
+				<%= history.time %>
+			</td>
+		</tr>
+	<% end %>
+	<tr>
+		<td colspan="2"> <%= link_to "back to home " , members_home_path %></td>
+	</tr>
+
+</table>

@@ -11,7 +11,12 @@
 				<td> <%= user.user_detail.fathers_name %> </td>
 				<td> <%= user.email %></td>
 				<td> <%= user.user_detail.address %> </td>
-				<td> <%= user.user_detail.gender %> </td>
+				<td> <% if user.user_detail.gender %> 
+							<%= 'Male' %>
+					<% else %>
+						<%= 'Female' %>
+					<% end %>
+				</td>
 				<td> <%= link_to( "show", :controller => "users", :action => "show", :id => user.id) %> </td>
 			</tr>
 		<% end %>

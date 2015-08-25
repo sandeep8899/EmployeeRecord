@@ -1,0 +1,20 @@
+<h2> Welcome To Beryl Systems </h2>
+<br>
+<br>
+<table>
+	<tr>
+		<td style="width:60%"> 
+		</td>
+		<td style="width:30%">
+			<h3> WelCome <%= current_user.user_detail.name.capitalize %></h3>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= link_to image_tag("punch.jpg"), punch_path %>
+		</td>
+		<td>
+			<%= link_to "view previous History" , history_path %>
+		</td>
+	</tr>
+</table>
