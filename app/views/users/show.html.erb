@@ -1,0 +1,21 @@
+<table border="2">
+	<tr>
+		<th> Name </th> <td> <%= @user.user_detail.name %> </td>
+	</tr>
+	<tr>
+		<th> Father's Name </th><td> <%= @user.user_detail.fathers_name %> </td>
+	</tr>
+	<tr>
+		<th> Email </th><td> <%= @user.email %></td>
+	</tr>
+	<tr>
+		<th> Address </th><td> <%= @user.user_detail.address %> </td>
+	</tr>
+	<tr>
+		<th> Gender </th><td> <%= @user.user_detail.gender %> </td>
+	</tr>
+	<tr>
+		<td colspan="2"> <%= link_to "back to home", users_path %> </td>
+	</tr>
+</table>	
+			

@@ -1,0 +1,19 @@
+<table border="1">
+	<thead>
+		<tr>
+			<th>Name</th><th>Father's Name</th><th>Email</th><th>Address</th><th>Gender</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td> <%= user.user_detail.name %> </td>
+				<td> <%= user.user_detail.fathers_name %> </td>
+				<td> <%= user.email %></td>
+				<td> <%= user.user_detail.address %> </td>
+				<td> <%= user.user_detail.gender %> </td>
+				<td> <%= link_to( "show", :controller => "users", :action => "show", :id => user.id) %> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
