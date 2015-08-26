@@ -1,0 +1,38 @@
+
+	<% if @user_detail.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@user_detail.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+	      <ul>
+	      <% @user_detail.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>								
+  	<% end %>
+	<table>
+	
+		<tr>
+			<td> Name : </td><td><%= f.text_field :name %></td>
+		</tr>
+		<tr>
+			<td> Father's Name : </td><td><%= f.text_field :fathers_name %></td>
+		</tr>
+		<tr>
+			<td> Address : </td><td><%= f.text_field :address %></td>
+		</tr>
+		<tr>
+			<td> Gender : </td><td><%= f.select :gender, [['Male', true], ['female', false]] %></td>
+		</tr>
+		<tr>
+			<td> Contact Number : </td><td><%= f.text_field :contact_number %></td>
+		</tr>
+		<tr>
+			<td> Emergency Contact No. : </td><td><%= f.text_field :emergency_contact_number %></td>
+		</tr>
+		<tr>
+			<td> Date Of Joining : </td><td><%= f.text_field :date_of_joining %></td>
+		</tr>
+		<tr> <td colspan="2"><%= f.submit('Submit') %></td></tr>
+	
+	</table>

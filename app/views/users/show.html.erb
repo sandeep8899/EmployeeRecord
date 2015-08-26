@@ -12,7 +12,24 @@
 		<th> Address </th><td> <%= @user.user_detail.address %> </td>
 	</tr>
 	<tr>
-		<th> Gender </th><td> <%= @user.user_detail.gender %> </td>
+		<th> Gender </th><td> <%if @user.user_detail.gender %> 
+									<%= 'Male' %>
+								<% else %>
+									<%= 'Female' %>
+								<% end %>	
+						 </td>
+	</tr>
+	<tr>
+		<th> Contact Number :</th>
+		<td><%= @user.user_detail.contact_number %></td>
+	</tr>
+	<tr>
+		<th> Emergency Contact No. :</th>
+		<td><%= @user.user_detail.emergency_contact_number %></td>
+	</tr>
+	<tr>
+		<th> Date of Joining :</th>
+		<td><%= @user.user_detail.date_of_joining %></td>
 	</tr>
 	<tr>
 		<td colspan="2"> <%= link_to "back to home", users_path %> </td>

@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
-  devise_for :users , :controllers => {:registrations => 'registrations'}
-
-  root "users#index"
+  
+  resources :products
+  root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  devise_for :users 
+
+  devise_scope :user do
+    #root :to => 'devise/sessions#new'
+    get "login", :to => "devise/sessions#new"
+    get "register", :to => "devise/registrations#new" , :controllers => {:registrations => 'registrations'}
+    get "settings", :to => "devise/registrations#edit"
+    get "logout",   :to => "devise/sessions#destroy"
+
+  end
+
+  #devise_for :users , :controllers => {:registrations => 'registrations'}
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
@@ -14,8 +26,8 @@ Rails.application.routes.draw do
       get 'users' => 'users#index'
       get 'users/:id' => 'users#show'
       get 'members_home' => 'users#members_home'
-      get 'punch' => 'users#punch'
-      get 'history/:id' => 'users#history'
+      post 'punch' => 'users#punch'
+      get 'history/:id' => 'histories#show'
       #get 'user_details/new' => 'user_details#new'
       #post 'user_details' => 'user_details#create'
   # Example of named route that can be invoked with purchase_url(id: product.id)
@@ -23,7 +35,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-      resource :user_details
+      resources :user_details
   # Example resource route with options:
   #   resources :products do
   #     member do

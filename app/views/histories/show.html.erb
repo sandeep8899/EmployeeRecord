@@ -1,11 +1,11 @@
 <table border="1">
 	<tr>
-		<td colspan="2"> 
+		<td colspan="3"> 
 			<h3> Your all History </h3>
 		</td>
 	</tr>
 	<tr>
-		<th> Date </th><th> Time </th>
+		<th> Date </th><th> In Time </th><th> Out Time </th>
 	</tr>
 	<% @histories.each do |history| %>
 		<tr>
@@ -13,12 +13,15 @@
 				<%= history.date %>
 			</td>
 			<td>
-				<%= history.time %>
+				<%= history.in_time %>
+			</td>
+			<td>
+				<%= history.out_time %>
 			</td>
 		</tr>
 	<% end %>
 	<tr>
-		<td colspan="2"> <%= link_to "back to home " , members_home_path %></td>
+		<td colspan="3"> <%= link_to "back to home " , members_home_path %></td>
 	</tr>
 
 </table>

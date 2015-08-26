@@ -1,17 +1,5 @@
-<table>
-	<%= form_for @user_details  do |f| %> 
-		<tr>
-			<td> Name : </td><td><%= f.text_field :name %></td>
-		</tr>
-		<tr>
-			<td> Father's Name : </td><td><%= f.text_field :fathers_name %></td>
-		</tr>
-		<tr>
-			<td> Address : </td><td><%= f.text_field :address %></td>
-		</tr>
-		<tr>
-			<td> Gender : </td><td><%= f.select :gender, [['Male', true], ['female', false]] %></td>
-		</tr>
-		<tr> <td colspan="2"><%= f.submit('Submit') %></td></tr>
-	<% end %>
-</table>
+<h1>Creating Employee</h1>
+<%= form_for(@user_detail)  do |f| %> 
+	<%= render :partial => 'form' %>
+<% end %>
+<%= link_to 'Back', members_home_path %>

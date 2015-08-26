@@ -18,7 +18,7 @@
 					<% end %>
 				</td>
 				<td> <%= link_to( "show", :controller => "users", :action => "show", :id => user.id) %> </td>
-				<td> <%= link_to( "view history", :controller => "users", :action => "history", :id => user.user_detail.id) %> </td>
+				<td> <%= link_to( "view history", :controller => "histories", :action => "show", :id => user.user_detail.id) %> </td>
 			</tr>
 		<% end %>
 	</tbody>

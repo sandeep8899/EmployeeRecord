@@ -3,18 +3,36 @@
 <br>
 <table>
 	<tr>
-		<td style="width:60%"> 
-		</td>
-		<td style="width:30%">
+		<td>
 			<h3> WelCome <%= current_user.user_detail.name.capitalize %></h3>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<%= link_to image_tag("punch.jpg"), punch_path %>
+			<table border="1">
+				<tr>
+					<th> DATE </th><th> IN </th><th> OUT</th>
+				</tr>
+				<tr>
+					<td>
+						<%= text_field_tag 'date', @date , disabled: :true %>
+					</td>
+					<td>
+						<%= form_tag punch_path do %>
+                          <%= select_time(Time.now) %>
+
+						<%= time_select 'in', 'in_time', {ampm: true , ignore_date: true} %><%= submit_tag 'Done' %><% end %>
+					</td>
+					<td>
+						<%= form_tag punch_path do %><%= time_select 'out', 'out_time', {ampm: true, ignore_date: true} %><%= submit_tag 'Done' %><% end %>
+					</td>
+				</tr>
+			</table>
 		</td>
+	</tr>
+	<tr>
 		<td>
-			<%= link_to "view previous History" , history_path %>
+			<%= link_to( "show previous history", :controller => "histories", :action => "show", :id => current_user.user_detail.id) %>
 		</td>
 	</tr>
 </table>
