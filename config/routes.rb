@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       get 'users/:id' => 'users#show'
       get 'members_home' => 'users#members_home'
       get 'punch' => 'users#punch'
-      get 'history' => 'users#history'
+      get 'history/:id' => 'users#history'
       #get 'user_details/new' => 'user_details#new'
       #post 'user_details' => 'user_details#create'
   # Example of named route that can be invoked with purchase_url(id: product.id)

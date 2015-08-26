@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 	end
 
 	def history
-		@histories=History.where(user_detail_id: current_user.user_detail.id)
+		@histories=History.where(user_detail_id: params[:id])
 	end
 
 	def check_details
