@@ -18,13 +18,10 @@
 						<%= text_field_tag 'date', @date , disabled: :true %>
 					</td>
 					<td>
-						<%= form_tag punch_path do %>
-                          <%= select_time(Time.now) %>
-
-						<%= time_select 'in', 'in_time', {ampm: true , ignore_date: true} %><%= submit_tag 'Done' %><% end %>
+						<%= form_tag punch_path do %><%= time_select 'in', 'in_time', {ampm: true, default: {hour: Time.now.hour , min: Time.now.min} }%><%= submit_tag 'Done' %><% end %>
 					</td>
 					<td>
-						<%= form_tag punch_path do %><%= time_select 'out', 'out_time', {ampm: true, ignore_date: true} %><%= submit_tag 'Done' %><% end %>
+						<%= form_tag punch_path do %><%= time_select 'out', 'out_time', {ampm: true, default: {hour: Time.now.hour , minutes: Time.now.min}} %><%= submit_tag 'Done' %><% end %>
 					</td>
 				</tr>
 			</table>

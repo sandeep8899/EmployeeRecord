@@ -13,10 +13,10 @@
 				<%= history.date %>
 			</td>
 			<td>
-				<%= history.in_time %>
+				<%= change_time(history.in_time) unless history.in_time.nil? %>
 			</td>
 			<td>
-				<%= history.out_time %>
+				<%= change_time(history.out_time) unless history.out_time.nil? %>
 			</td>
 		</tr>
 	<% end %>

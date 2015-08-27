@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826140112) do
+ActiveRecord::Schema.define(version: 20150827125226) do
 
   create_table "histories", force: :cascade do |t|
     t.string   "date",           limit: 255, null: false
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 20150826140112) do
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.integer  "user_id",                  limit: 4
-    t.integer  "contact_number",           limit: 4,   null: false
-    t.string   "date_of_joining",          limit: 255, null: false
-    t.integer  "emergency_contact_number", limit: 4,   null: false
+    t.string   "contact_number",           limit: 10,  null: false
+    t.string   "date_of_joining",          limit: 255
+    t.string   "emergency_contact_number", limit: 10,  null: false
   end
 
   create_table "users", force: :cascade do |t|
